@@ -67,6 +67,8 @@ func (p *Plugin) Exec() error {
 }
 
 func (p Plugin) branchAllowed() (error, bool) {
+    // allow all branch @yedai@iflytek.com
+    return nil, true
 
 	re, err := regexp.Compile(p.BranchRegex)
 	if err != nil {
