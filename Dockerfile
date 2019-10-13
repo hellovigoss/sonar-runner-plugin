@@ -8,6 +8,7 @@ ENV SONAR_RUNNER_VERSION 2.4
 RUN wget http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.4/sonar-runner-dist-2.4.jar -O /opt/sonar/runner.jar
 
 ENV NODE_VERSION 6.13.0
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
     && apk add --no-cache \
